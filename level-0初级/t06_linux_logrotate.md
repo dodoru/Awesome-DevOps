@@ -1,5 +1,8 @@
 
-## 日志文件的管理 logrotate
+## 日志文件的管理 
+
+### logrotate 默认配置和管理
+
 - `/etc/logrotate.conf`
 
 ```text 
@@ -69,16 +72,38 @@ include /etc/logrotate.d
 /home/*/.pm2/pm2.log
 /home/*/.pm2/logs/*.log
 {
+        size 10M
         rotate 15
-        daily
         missingok
         notifempty
         compress
         delaycompress
         copytruncate
-        create 0640 developer developer
+        # create 0640 dev dev
         dateext
-                dateformat %Y-%m-%d.
-        extension log
+        dateformat -%Y%m%d%H%M
 }
-```
+
+
+/srv/services/*/logs/*.log
+/srv/projects/*/logs/*.log
+{
+        # weekly
+        size 10M
+        rotate 15
+        missingok
+        notifempty
+        compress
+        delaycompress
+        copytruncate
+        # create 0640 dev dev
+        dateext
+        dateformat -%Y%m%d%H%M
+        
+        # !-- 注意不要同时使用以下选项
+        # dateformat %Y-%m-%d.
+        # extension log
+        # 请自行测试理解发生了什么事情 @2020年12月15日--!
+}
+``` 
+ 
