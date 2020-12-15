@@ -62,7 +62,9 @@ refer:
 - [菜鸟教程：Linux 命令大全](https://www.runoob.com/linux/linux-command-manual.html)
 - [菜鸟教程：Linux 系统目录结构](https://www.runoob.com/linux/linux-system-contents.html)
 - [cnblogs: Linux下/sys目录介绍](https://www.cnblogs.com/cuckoo-/p/10742367.html)
+- [Filesystem Hierarchy Standard](https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)
 
 
+## 推荐使用工具网站:
 
-    
+- [Bash scripting cheatsheet](https://devhints.io/bash)
