@@ -24,4 +24,30 @@ QueryString无效
 
 # python3
 def get_error_msg(code):
-    pass
+    try:
+        if code==4000:
+            return("输入的数据有误")
+        elif 40019>=code>=40001:
+            return("参数类型错误")
+        elif 40039>=code>=40020:
+            return("参数值格式错误")
+        elif 40049>=code>=40040:
+            return("参数值超出限制范围")
+        elif 40079>=code>=40050:
+            return("需要补充指定的参数值")
+        elif 40099>=code>=40080:
+            return("URL的查询条件QueryString无效")
+        elif code==40100:
+            return("用户未登录")
+        elif code==40104:
+            return("用户已注销")
+        elif 40319>=code>=40300:
+            return("用户未授权")
+        elif 40399>=code>=40320:
+            return("用户权限不足")
+        elif code==40500:
+            return("http请求方法错误")
+        else:
+            return None
+    except Exception as e:
+        return e
