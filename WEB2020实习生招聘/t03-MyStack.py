@@ -15,7 +15,7 @@ class MyStack():
     """
 
     def __init__(self, *args):
-        pass
+        self.arg = [*args]
 
     def append(self, x):
         pass

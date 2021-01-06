@@ -4,19 +4,31 @@
 # 现在, 请你实现以下函数, 业务场景常见于ssh登录
 # 温馨提示: 你可以自己实现算法, 也可以使用标准库或第三方库
 
-def rsa_encode(message, public_key):
+
+def back(strs):
+
+    strs = strs[::-1]
+
+    return strs
+
+
+def rsa_encode(message, public_key=back):
     """
     :param message: 明文消息
     :param public_key: 公钥
     :return: 密文消息
     """
-    pass
+    return public_key(str(message))
 
 
-def rsa_decode(cipher_text, private_key):
+def rsa_decode(cipher_text, private_key=back):
     """
     :param cipher_text: 密文消息
     :param private_key: 密钥
     :return: 明文消息
     """
-    pass
+    return private_key(str(cipher_text))
+
+
+print(rsa_encode("abc"))
+print(rsa_decode(rsa_encode("abc")))
